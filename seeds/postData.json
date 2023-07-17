@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Hello World!",
+    "content": "This is my first post!",
+    "creator": "irene"
+  },
+  {
+    "title": "Learning MVC",
+    "content": "Currently doing the Module 14 challenge to try and understand MVC a bit more.",
+    "creator": "irene"
+  },
+  {
+    "title": "i beat leetcode",
+    "content": "i did all 2528 leetcode problems and it wasnt even that hard lol anyone else think they should make the problems harder???",
+    "creator": "leetcodemaster"
+  }
+]
