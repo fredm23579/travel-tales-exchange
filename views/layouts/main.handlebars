@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ensemble | stay connected</title>
+  <link rel="stylesheet" href="/css/bulma.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="is-flex-direction-column">
-  <header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <header class="is-flex is-full">
+    <nav class="navbar is-full is-flex-direction-row is-justify-content-space-around is-align-items-center" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <h1>ensemble</h1>
+          <h1 class="is-size-3">ensemble</h1>
         </a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -22,20 +24,20 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-end">
-          <a class="navbar-item">
+          <a class="navbar-item is-size-5">
             home
           </a>
         
-          <a class="navbar-item">
+          <a class="navbar-item is-size-5">
             dashboard
           </a>
         
           {{#if loggedIn}}
-          <a class="navbar-item">
+          <a class="navbar-item is-size-5">
             log in
           </a>
           {{else}}
-          <a class="navbar-item">
+          <a class="navbar-item is-size-5">
             log in
           </a>
           {{/if}}
