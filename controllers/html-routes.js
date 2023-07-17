@@ -51,6 +51,7 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
+// render individual post page
 router.get('/post/:id', async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id);
@@ -59,6 +60,25 @@ router.get('/post/:id', async (req, res) => {
       post,
       username: req.session.username,
       loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// render update page for posts
+router.get('/update/post/:id', async (req, res) => {
+  try {
+    const dbPostData = await Post.findByPk(req.params.id);
+    const post = dbPostData.get({ plain: true });
+    if (post.creator !== req.session.username) {
+      res
+        .status(400)
+        .json({ message: 'Post not found or you don\'t own this post!' });
+    }
+    res.render('update-post', {
+      post,
+      loggedIn: req.session.loggedIn
     });
   } catch (err) {
     res.status(500).json(err);
