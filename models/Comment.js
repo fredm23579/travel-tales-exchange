@@ -26,6 +26,14 @@ Comment.init(
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW, // records date/time at time of creation
+    },
+    post_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'post',
+        key: 'id',
+      }
     }
   },
   {
