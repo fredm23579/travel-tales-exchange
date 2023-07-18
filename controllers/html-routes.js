@@ -45,6 +45,7 @@ router.get('/dashboard', async (req, res) => {
       userPost.commentCount = userPost.comments.length;
       return userPost;
     });
+    posts.reverse();
     res.render('dashboard', {
       posts,
       username: "irene",
