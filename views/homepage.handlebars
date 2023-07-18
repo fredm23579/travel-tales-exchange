@@ -1,1 +1,29 @@
-<h1 class="is-size-1">hello world</h1>
+{{#each posts as |post|}}
+<div class="box column is-half">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>@{{post.creator}}</strong> <small>{{post.date_created}}</small>
+          <br>
+          <strong>{{post.title}}</strong>
+          <br>
+          {{post.content}}
+        </p>
+      </div>
+      <nav class="level is-mobile">
+        <div class="level-left">
+          <a class="level-item is-flex is-align-items-center" aria-label="reply" href="/post/{{post.id}}">
+            <span class="icon is-small">
+              <ion-icon name="chatbubble-outline"></ion-icon>
+            </span>
+            <span class="is-small">
+              {{post.commentCount}}
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </article>
+</div>
+{{/each}}
