@@ -72,7 +72,6 @@ router.get('/post/:id', async (req, res) => {
       username: "irene",
       loggedIn: req.session.loggedIn,
     });
-    console.log(post);
   } catch (err) {
     res.status(500).json(err);
   }
