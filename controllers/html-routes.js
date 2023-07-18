@@ -3,7 +3,6 @@ const { Post, Comment } = require('../models');
 
 // render homepage - contains all user posts
 router.get('/', async (req, res) => {
-  console.log(req.session.loggedIn);
   try {
     const dbPostData = await Post.findAll({
       include: [
@@ -30,10 +29,14 @@ router.get('/', async (req, res) => {
 
 // render dashboard - contains personal user posts
 router.get('/dashboard', async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.render('dashboard');
+    return;
+  }
   try {
     const dbUserPostData = await Post.findAll({
       where: {
-        creator: "irene", // can't figure out getting username rn will edit later
+        creator: req.session.username, // can't figure out getting username rn will edit later
       },
       include: [
         {
@@ -49,7 +52,7 @@ router.get('/dashboard', async (req, res) => {
     posts.reverse();
     res.render('dashboard', {
       posts,
-      username: "irene",
+      username: req.session.username,
       loggedIn: req.session.loggedIn
     });
   } catch (err) {
