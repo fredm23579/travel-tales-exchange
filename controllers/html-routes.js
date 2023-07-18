@@ -11,15 +11,18 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    const posts = dbPostData.map((post) => 
-      post.get({ plain: true })
-    );
+    const posts = dbPostData.map((post) => {
+      const userPost = post.get({ plain: true })
+      userPost.commentCount = userPost.comments.length;
+      return userPost;
+    });
+    posts.reverse(); // sort by most recent first
     res.render('homepage', {
       posts,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
-    console.error(err);
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -29,7 +32,7 @@ router.get('/dashboard', async (req, res) => {
   try {
     const dbUserPostData = await Post.findAll({
       where: {
-        creator: req.session.username,
+        creator: "irene",
       },
       include: [
         {
@@ -38,16 +41,17 @@ router.get('/dashboard', async (req, res) => {
       ]
     });
     const posts = dbUserPostData.map((post) => {
-      const userPost = post.get({ plain: true });
-      userPost.commentCount = userPost.Comments.length;
+      const userPost = post.get({ plain: true })
+      userPost.commentCount = userPost.comments.length;
       return userPost;
     });
     res.render('dashboard', {
       posts,
-      username: req.session.username,
+      username: "irene",
       loggedIn: req.session.loggedIn
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -55,13 +59,20 @@ router.get('/dashboard', async (req, res) => {
 // render individual post page
 router.get('/post/:id', async (req, res) => {
   try {
-    const dbPostData = await Post.findByPk(req.params.id);
+    const dbPostData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment,
+        }
+      ]
+    });
     const post = dbPostData.get({ plain: true });
     res.render('post', {
       post,
-      username: req.session.username,
+      username: "irene",
       loggedIn: req.session.loggedIn,
     });
+    console.log(post);
   } catch (err) {
     res.status(500).json(err);
   }
