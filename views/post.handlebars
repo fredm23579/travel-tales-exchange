@@ -1,0 +1,38 @@
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>@{{post.creator}}</strong> <small>{{post.date_created}}</small>
+          <br>
+          <strong>{{post.title}}</strong>
+          <br>
+          {{post.content}}
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<form class="is-flex-direction-column is-centered comment-form">
+  <textarea class="textarea is-rounded" placeholder="Add a comment..."></textarea>
+  <input class="button" type="submit" value="post comment">
+</form>
+
+<h2 class="is-size-4">comments ({{post.comments.length}})</h2>
+
+{{#each post.comments as |comment|}}
+<div class="box comment-box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>@{{comment.creator}}</strong> <small>{{comment.date_created}}</small>
+          <br>
+          {{comment.content}}
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+{{/each}}
