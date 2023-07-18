@@ -25,7 +25,12 @@ Post.init(
         model: 'user',
         key: 'username',
       }
-    }
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW, // records date/time at time of creation
+    },
   },
   {
     sequelize,
