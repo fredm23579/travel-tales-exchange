@@ -1,6 +1,12 @@
-<div class="greeting mb-5 is-size-3">
-  <h1>Hey @{{username}}! <br>Here are your posts.</h1>
+<div class="greeting is-flex is-justify-content-space-between is-align-items-center mb-5 is-size-3">
+  <h1 class="greeting-txt">Hey @{{username}}! <br>Here are your posts.</h1>
+  <button class="button new-post-btn">new post</button>
 </div>
+<form class="is-centered new-post-form mb-5" style="display: none;" action="/dashboard" method="post">
+  <input class="input mb-3" type="text" id="title" name="title" placeholder="Enter title" required>
+  <textarea class="textarea mb-3" id="content" name="content" placeholder="Enter content" required></textarea>
+  <button class="button post-btn" type="submit">post</button>
+</form>
 {{#each posts as |post|}}
 <div class="box">
   <article class="media">

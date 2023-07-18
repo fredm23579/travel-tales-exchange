@@ -14,8 +14,8 @@
   </article>
 </div>
 
-<form class="is-flex-direction-column is-centered comment-form">
-  <textarea class="textarea is-rounded" placeholder="Add a comment..."></textarea>
+<form class="is-flex-direction-column is-centered comment-form" action="/post/{{post.id}}" method="post">
+  <textarea name="content" class="textarea is-rounded" placeholder="Add a comment..."></textarea>
   <input class="button" type="submit" value="post comment">
 </form>
 
