@@ -1,3 +1,10 @@
+{{#unless loggedIn}}
+<div class="greeting is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center mb-5 is-size-3">
+  <h1 class="greeting-txt">You don't have access to this page.</h1>
+  <h1 class="greeting-txt">Please <a href="/login">log in or sign up</a> to see your dashboard.</h1>
+</div>
+{{/unless}}
+{{#if loggedIn}}
 <div class="greeting is-flex is-justify-content-space-between is-align-items-center mb-5 is-size-3">
   <h1 class="greeting-txt">Hey @{{username}}! <br>Here are your posts.</h1>
   <button class="button new-post-btn">new post</button>
@@ -37,3 +44,4 @@
 </div>
 {{/each}}
 <script src="/js/app.js"></script>
+{{/if}}

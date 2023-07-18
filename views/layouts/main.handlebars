@@ -33,8 +33,13 @@
           </a>
         
           {{#if loggedIn}}
-          <a class="navbar-item is-size-5" href="/logout">
-            log out
+          <a class="navbar-item is-size-5">
+            <form method="post" action="/logout" class="inline">
+              <input type="hidden" name="extra_submit_param" value="extra_submit_value">
+              <button type="submit" name="logout" value="submit_value" class="link-button">
+                log out
+              </button>
+            </form>
           </a>
           {{else}}
           <a class="navbar-item is-size-5" href="/login">
