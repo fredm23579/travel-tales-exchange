@@ -3,6 +3,7 @@ const { Post, Comment } = require('../models');
 
 // render homepage - contains all user posts
 router.get('/', async (req, res) => {
+  console.log(req.session.loggedIn);
   try {
     const dbPostData = await Post.findAll({
       include: [
@@ -32,7 +33,7 @@ router.get('/dashboard', async (req, res) => {
   try {
     const dbUserPostData = await Post.findAll({
       where: {
-        creator: "irene",
+        creator: "irene", // can't figure out getting username rn will edit later
       },
       include: [
         {
@@ -70,7 +71,7 @@ router.get('/post/:id', async (req, res) => {
     const post = dbPostData.get({ plain: true });
     res.render('post', {
       post,
-      username: "irene",
+      username: req.session.username,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

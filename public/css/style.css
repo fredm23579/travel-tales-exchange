@@ -23,3 +23,16 @@ main {
 .post-btn {
   float: right;
 }
+
+.divider {
+  border-left: 3px solid #627264;
+  height: 200px;
+}
+
+.login-txt {
+  padding-left: 8px;
+}
+
+.login-button {
+  margin-left: 8px;
+}
