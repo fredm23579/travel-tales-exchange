@@ -24,7 +24,7 @@ What I accomplished:
 Working on making authentication/sessions work and will improve the app as soon as possible.
 
 
-![Screenshot of Ensemble homepage](img/preview.jpg)
+![Screenshot of Ensemble homepage](public/img/preview.jpg)
 
 
 ## Technologies Used
