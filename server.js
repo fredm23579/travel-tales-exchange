@@ -15,13 +15,14 @@ const PORT = process.env.PORT || 3001;
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 60 * 60 * 1000,
+    maxAge: 30 * 60 * 1000, // 30 minutes
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
   },
   resave: false,
   saveUninitialized: true,
+  expires: new Date(Date.now() + 30 * 60 * 1000), // 30 minutes
   // Sets up session store
   store: new SequelizeStore({
     db: sequelize,
@@ -40,6 +41,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+
+// middleware for checking if session has expired
+app.use((req, res, next) => {
+  if (req.session.expires && Date.now() > req.session.expires) {
+    req.session.destroy(() => {
+      res.redirect('/login');
+    });
+  } else {
+    next();
+  }
+});
+
+// refreshes expiration time so site doesn't log out active users
+app.use((req, res, next) => {
+  if (req.session.expires) {
+    const extendedExpirationTime = new Date(Date.now() + 30 * 60 * 1000);
+    req.session.expires = extendedExpirationTime;
+  }
+  next();
+});
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
