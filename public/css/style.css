@@ -1,3 +1,21 @@
+html {
+  background-color: #BFD3C1;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .navbar {
   width: 100%;
 }
+
+.level-item {
+  gap: 5px;
+}
+
+.comment-box {
+  width: 75%;
+}
+
