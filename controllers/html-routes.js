@@ -83,14 +83,12 @@ router.get('/post/:id', async (req, res) => {
 });
 
 // render update page for posts
-router.get('/update/post/:id', async (req, res) => {
+router.get('/post/:id/edit', async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id);
     const post = dbPostData.get({ plain: true });
     if (post.creator !== req.session.username) {
-      res
-        .status(400)
-        .json({ message: 'Post not found or you don\'t own this post!' });
+      res.redirect('/');
     }
     res.render('update-post', {
       post,

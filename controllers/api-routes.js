@@ -29,6 +29,41 @@ router.post('/dashboard', async (req, res) => {
   }
 });
 
+router.put('/post/:id/edit', async (req, res) => {
+  try {
+    await Post.update(
+      {
+        title: req.body.title,
+        content: req.body.content,
+      },
+      {
+        where: {
+          id: req.params.id,
+          creator: req.session.username,
+        },
+      }
+    );
+    res.redirect(`/post/${req.params.id}`);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.delete('/post/:id/edit', async (req, res) => {
+  try {
+    await Post.destroy({
+      where: {
+        id: req.params.id,
+        creator: req.session.username,
+      }
+    });
+    res.redirect('/dashboard');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.post('/login', async (req, res) => {
 
   if (req.body.loginuser) {
