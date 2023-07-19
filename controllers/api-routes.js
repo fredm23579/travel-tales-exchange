@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 
+// add new comments
 router.post('/post/:id', async (req, res) => {
   try {
     const newComment = {
@@ -9,12 +10,13 @@ router.post('/post/:id', async (req, res) => {
       post_id: req.params.id,
     }
     await Comment.create(newComment);
-    res.redirect(`/post/${req.params.id}`);
+    res.redirect(`/post/${req.params.id}`); 
   } catch (err) {
     res.status(500).send(err);
   }
 });
 
+// create new post
 router.post('/dashboard', async (req, res) => {
   try {
     const newPost = {
@@ -29,6 +31,7 @@ router.post('/dashboard', async (req, res) => {
   }
 });
 
+// update post
 router.put('/post/:id/edit', async (req, res) => {
   try {
     await Post.update(
@@ -43,29 +46,32 @@ router.put('/post/:id/edit', async (req, res) => {
         },
       }
     );
-    res.redirect(`/post/${req.params.id}`);
+    res.redirect(`/post/${req.params.id}`); // go back to post we just edited
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// delete post
 router.delete('/post/:id/edit', async (req, res) => {
   try {
     await Post.destroy({
       where: {
         id: req.params.id,
-        creator: req.session.username,
+        creator: req.session.username, // make sure user owns the post
       }
     });
-    res.redirect('/dashboard');
+    res.redirect('/dashboard'); // redirect to dashboard
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
+// login handling
 router.post('/login', async (req, res) => {
 
+  // checking if login field was submitted because we are handling login/signup at once
   if (req.body.loginuser) {
     try {
       const dbUserData = await User.findOne({
@@ -98,7 +104,7 @@ router.post('/login', async (req, res) => {
     } catch (err) {
       console.log(err);
     }
-  } else if (req.body.signupuser) {
+  } else if (req.body.signupuser) { // if no login submitted, we know user is signing up instead so handle that
     const newUser = {
       username: req.body.signupuser,
       password: req.body.signuppassword
@@ -106,11 +112,11 @@ router.post('/login', async (req, res) => {
     try {
       await User.create(newUser);
     } catch (err) {
-      if (err.name === 'SequelizeUniqueConstraintError') {
+      if (err.name === 'SequelizeUniqueConstraintError') { // handle existing username
         res
         .status(400)
         .send('Username already exists! Please try again.');
-      } else if (err.name === 'SequelizeValidationError') {
+      } else if (err.name === 'SequelizeValidationError') { // handle password length error
         res
         .status(400)
         .send('Password must be at least 8 characters long.');
@@ -121,9 +127,7 @@ router.post('/login', async (req, res) => {
       }
       return;
     }
-    console.log("is this still running?");
     req.session.save(() => {
-      console.log("session save goes thru");
       req.session.loggedIn = true;
       req.session.username = newUser.username;
       res.redirect('/dashboard');
