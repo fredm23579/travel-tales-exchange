@@ -14,10 +14,18 @@
   </article>
 </div>
 
+{{#unless loggedIn}}
+<div class="greeting is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center mb-5 is-size-3">
+  <h1 class="greeting-txt">Please <a href="/login">log in or sign up</a> to post a comment.</h1>
+</div>
+{{/unless}}
+
+{{#if loggedIn}}
 <form class="is-flex-direction-column is-centered comment-form" action="/post/{{post.id}}" method="post">
   <textarea name="content" class="textarea is-rounded" placeholder="Add a comment..."></textarea>
   <input class="button" type="submit" value="post comment">
 </form>
+{{/if}}
 
 <h2 class="is-size-4">comments ({{post.comments.length}})</h2>
 
