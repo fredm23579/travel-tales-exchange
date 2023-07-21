@@ -111,6 +111,11 @@ router.post('/login', async (req, res) => {
     }
     try {
       await User.create(newUser);
+      req.session.save(() => {
+        req.session.loggedIn = true;
+        req.session.username = newUser.username;
+        res.redirect('/dashboard');
+      });
     } catch (err) {
       if (err.name === 'SequelizeUniqueConstraintError') { // handle existing username
         res
@@ -127,11 +132,6 @@ router.post('/login', async (req, res) => {
       }
       return;
     }
-    req.session.save(() => {
-      req.session.loggedIn = true;
-      req.session.username = newUser.username;
-      res.redirect('/dashboard');
-    });
   }
 });
 
