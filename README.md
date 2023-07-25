@@ -10,6 +10,8 @@ On the homepage, users will be able to see posts made by all users. In order to 
 
 Users can post new posts on the dashboard page, as well as edit and delete posts they've made. On the homepage, users can also add comments to other posts and see the comments posted by others.
 
+Live: https://ensemble-blog-bfd105093377.herokuapp.com/ 
+
 ![Screenshot of Ensemble homepage](public/img/preview.png)
 
 
