@@ -1,7 +1,7 @@
 {
   "name": "module-14-challenge",
   "version": "1.0.0",
-  "description": "",
+  "description": "travel blog",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "seed": "node seeds/seed.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fred Motta",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
