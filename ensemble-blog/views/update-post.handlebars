@@ -1,0 +1,21 @@
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content is-flex is-flex-direction-column">
+        <p>
+          <strong>@{{post.creator}}</strong> <small>{{post.date_created}}</small>
+          <br>
+          <form class="is-centered new-post-form" action="/post/{{post.id}}/edit?_method=PUT" method="post">
+            <input class="input mb-3" type="text" id="title" name="title" value="{{post.title}}" required>
+            <textarea class="textarea mb-3" id="content" name="content"  required>{{post.content}}</textarea>
+            <button class="button post-btn column is-full is-flex is-align-items-center" type="submit">update</button>
+          </form>
+        </p>
+        <form class="is-centered" action="/post/{{post.id}}/edit?_method=DELETE" method="post">
+          <input type="hidden">
+          <button class="button is-danger delete-btn column is-full has-text-centered is-flex is-align-items-center">delete</button>
+        </form>
+      </div>
+    </div>
+  </article>
+</div>
