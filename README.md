@@ -8,7 +8,7 @@ The travel-tales-exchange blog is a dynamic web application allowing users to sh
 
 Check out the live demo of the application here: [Travel Blog Live](https://travel-tales-exchange-50aa2535b133.herokuapp.com/login)
 
-Screenshot of the Application: [Screenshot](public/img/clear-water-beaches-florida-2048x917.png)
+Screenshot of the Application: [Screenshot](public/img/clear-water-beaches-florida-2048x917.jpg)
 
 ## Features
 
