@@ -1,4 +1,4 @@
-# Travel-Blog Website
+# Travel Blog Website
 
 ## Description
 
@@ -8,7 +8,7 @@ The travel-tales-exchange blog is a dynamic web application allowing users to sh
 
 Check out the live demo of the application here: [Travel Blog Live](https://travel-tales-exchange-50aa2535b133.herokuapp.com/login)
 
-![Screenshot](public/img/clear-water-beaches-florida-2048x917.png)
+Screenshot of the Application: [Screenshot](public/img/clear-water-beaches-florida-2048x917.png)
 
 ## Features
 
@@ -23,24 +23,24 @@ Check out the live demo of the application here: [Travel Blog Live](https://trav
 - **Express.js**: A web application framework for Node.js.
 - **Sequelize**: A promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite, and Microsoft SQL Server.
 - **Handlebars.js**: A minimal templating engine.
-- **MySQL
-- **dotenv
-- **connect-session-sequelize
+- **MySQL**: Popular database.
+- **dotenv**: Package to manage environment variables.
+- **connect-session-sequelize**: Package that allows a session to persist using cookies.
 
 ## Installation
 
 To run this application locally, you'll need Node.js and a MySQL database set up on your machine.
 
-1. Clone the repository: git clone
+1. Clone the repository: ```git clone```
 
-2. Install the dependencies: npm i
+2. Install the dependencies: ```npm i```
 
 3. Create a `.env` file in the root directory with the following contents:
-
+```bash
 DB_NAME='your_database_name'
 DB_USER='your_username'
 DB_PASSWORD='your_password'
-
+```
 4. Run the schema.sql in your MySQL database to create the necessary database.
 
 5. Start the server: node server.js
