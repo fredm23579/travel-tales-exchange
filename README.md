@@ -2,7 +2,7 @@
 
 ## Description
 
-The travel-tales-exchange blog is a dynamic web application allowing users to share and comment on blog posts. It provides a platform for users to express their thoughts, opinions, and share information in a blog format. Built with a focus on user interaction and ease of use, Ensemble Blog offers a clean and responsive interface for a seamless blogging experience.
+The travel-tales-exchange blog is a dynamic web application allowing users to share and comment on blog posts. It provides a platform for users to express their thoughts, opinions, and share information in a blog format. Built with a focus on user interaction and ease of use, the blog offers a clean and responsive interface for a seamless blogging experience.
 
 ## Live Demo
 
