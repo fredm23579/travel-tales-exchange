@@ -1,10 +1,26 @@
 [
   {
+    "username": "admin",
+    "password": "password12345"
+  },
+  {
+    "username": "fredm1",
+    "password": "abc12345678"
+  },
+  {
+    "username": "fredm2",
+    "password": "abc12345678"
+  },
+  {
+    "username": "fredm3",
+    "password": "abc12345678"
+  },
+  {
     "username": "freddy",
     "password": "password12345"
   },
   {
-    "username": "coderco",
+    "username": "coder",
     "password": "password12345"
   }
 ]

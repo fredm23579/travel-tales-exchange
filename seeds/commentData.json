@@ -3,5 +3,30 @@
     "content": "WOW!!",
     "creator": "freddy",
     "post_id": 3
-  }
+  },
+  {
+    "content": "I love this post",
+    "creator": "admin",
+    "post_id": 1
+  },
+  {
+    "content": "Cool :)",
+    "creator": "coder",
+    "post_id": 2
+  },
+  {
+    "content": "I love this post",
+    "creator": "admin",
+    "post_id": 2
+  },
+  {
+    "content": "I love this post",
+    "creator": "admin",
+    "post_id": 3
+  },
+  {
+    "content": "Great post",
+    "creator": "fredm2",
+    "post_id": 1
+  }  
 ]

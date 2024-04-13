@@ -1,5 +1,20 @@
 [
   {
+    "title": "Hi this is my new post from SoCal",
+    "content": "I'm currently in SoCal and I'm having a great time! I'm going to the beach tomorrow and I'm so excited!",
+    "creator": "fredm3"
+  },
+  {
+    "title": "I saw the eclipse!!!",
+    "content": "I saw the eclipse today and it was amazing! I took some pictures and I'll post them later.",
+    "creator": "fredm2"
+  },
+  {
+    "title": "Hello test",
+    "content": "This is a test post",
+    "creator": "admin"
+  },
+  {
     "title": "Hello World!",
     "content": "This is my first post! I'm in Cancun!!",
     "creator": "freddy"
@@ -11,7 +26,7 @@
   },
   {
     "title": "The Solar Eclipse",
-    "content": "Here is a link to a picture from Mazatlan Sinaloa",
+    "content": "Here is a link to a picture from Mazatlan Sinaloa https://en.wikipedia.org/wiki/Mazatl%C3%A1n_Sinaloa",
     "creator": "Coder"
   }
 ]
