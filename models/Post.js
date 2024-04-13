@@ -1,9 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize'); // import sequelize (https://sequelize.org/docs/v6/core-concepts/model-basics/)
+const sequelize = require('../config/connection'); // import connection object from connection.js (https://sequelize.org/docs/v6/core-concepts/connections-and-transactions/)
 
-class Post extends Model {}
+class Post extends Model {} // Post model (https://sequelize.org/docs/v6/core-concepts/model-basics/)
 
-Post.init(
+Post.init(  // Post model (https://sequelize.org/docs/v6/core-concepts/model-basics/)
   {
     id: {
       type: DataTypes.INTEGER,
@@ -19,7 +19,7 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    creator: {
+    creator: { 
       type: DataTypes.STRING,
       references: {
         model: 'user',

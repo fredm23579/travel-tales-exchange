@@ -1,9 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize'); // import sequelize (https://sequelize.org/docs/v6/core-concepts/model-basics/)
+const sequelize = require('../config/connection'); 
 
-class Comment extends Model {}
+class Comment extends Model {} // Comment model (https://sequelize.org/docs/v6/core-concepts/model-basics/)
 
-Comment.init(
+Comment.init(  
   {
     id: {
       type: DataTypes.INTEGER,
@@ -27,20 +27,20 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW, // records date/time at time of creation
     },
-    post_id: {
+    post_id: {  // foreign key for post id (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
+      references: { 
         model: 'post',
-        key: 'id',
+        key: 'id', // foreign key for post id
       }
     }
   },
   {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'comment',
+    sequelize, // for connecting to db with sequelize (default is ./config/connection.js)
+    freezeTableName: true, // for connecting to db with sequelize (default is ./config/connection.js)
+    underscored: true, // for connecting to db with sequelize (default is ./config/connection.js)
+    modelName: 'comment', // for connecting to db with sequelize (default is ./config/connection.js)
   }
 );
 

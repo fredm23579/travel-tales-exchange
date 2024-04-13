@@ -1,5 +1,5 @@
-html {
-  background-color: #5f76db;
+html { 
+  background-color: #5f76db; 
 }
 
 main {
@@ -46,3 +46,4 @@ main {
 	cursor: pointer;
 	outline: inherit;
 }
+
