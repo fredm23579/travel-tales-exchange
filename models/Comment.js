@@ -3,36 +3,36 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model {} // Comment model (https://sequelize.org/docs/v6/core-concepts/model-basics/)
 
-Comment.init(  
+Comment.init(  // Comment model (https://sequelize.org/docs/v6/core-concepts/model-basics/) 
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+    id: { // id column (https://sequelize.org/docs/v6/core-concepts/model-basics/#column-options) 
+      type: DataTypes.INTEGER, // data type (https://sequelize.org/master/identifiers.html) 
+      allowNull: false, // allow null (https://sequelize.org/docs/v6/core-concepts/model-basics/#allowing-nulls)
+      primaryKey: true, // primary key (https://sequelize.org/docs/v6/core-concepts/model-basics/#primary-keys)
+      autoIncrement: true, // auto increment (https://sequelize.org/docs/v6/core-concepts/model-basics/#auto-incrementing)
     },
-    content: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    content: { // content column (https://sequelize.org/docs/v6/core-concepts/model-basics/#column-options)
+      type: DataTypes.STRING, // data type (https://sequelize.org/master/identifiers.html)
+      allowNull: false, // allow null (https://sequelize.org/docs/v6/core-concepts/model-basics/#allowing-nulls)
     },
-    creator: {
-      type: DataTypes.STRING,
-      references: {
-        model: 'user',
-        key: 'username',
+    creator: {  // foreign key for username (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
+      type: DataTypes.STRING, // data type (https://sequelize.org/master/identifiers.html) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
+      references: { // foreign key for username (https //sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
+        model: 'user', // model (https://sequelize.org/docs /v6/core-concepts/assocs/#foreign-keys) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
+        key: 'username', // foreign key for username (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys) (https://sequelize.org
       }
     },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW, // records date/time at time of creation
+    date_created: { // https://sequelize.org/docs/v6/core-concepts/model-basics/#column-options (https://sequelize.org/docs/v6/core-concepts/model-basics/#column-options)
+      type: DataTypes.DATE, // data type (https://sequelize.org/master/identifiers.html) (https://sequelize.org/docs/v6/core-concepts/model-basics/#data-types) 
+      allowNull: false, // allow null (https://sequelize.org/docs/v6/core-concepts/model-basics/#allowing-nulls)
+      defaultValue: DataTypes.NOW, // records date/time at time of creation (https://sequelize.org/docs/v6/core-concepts/model-basics/#default-values)
     },
-    post_id: {  // foreign key for post id (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: { 
-        model: 'post',
-        key: 'id', // foreign key for post id
+    post_id: {  // foreign key for post id (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
+      type: DataTypes.INTEGER, // data type (https://sequelize.org/master/identifiers.html) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
+      allowNull: false, // allow null (https://sequelize.org/docs/v6/core-concepts/model-basics/#allowing-nulls) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
+      references: {  // foreign key for post id (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
+        model: 'post', // model (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
+        key: 'id', // foreign key for post id (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys) (https://sequelize.org/docs/v6/core-concepts/assocs/#foreign-keys)
       }
     }
   },
@@ -44,4 +44,4 @@ Comment.init(
   }
 );
 
-module.exports = Comment;
+module.exports = Comment; // export Comment model (https://sequelize.org/docs/v6/core-concepts/model-basics/) (https://sequelize.org/docs/v6/core-concepts/model-basics/) (https://github
