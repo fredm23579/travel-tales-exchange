@@ -68,17 +68,17 @@ app.use((req, res, next) => { // middleware for checking if session has expired 
 
 // refreshes expiration time so site doesn't log out active users (https://expressjs.com/en/guide/behind-proxies.html) 
 app.use((req, res, next) => { // middleware for checking if session has expired (https://expressjs.com/en/guide/behind-proxies.html)
-  if (req.session.expires) {   
+  if (req.session.expires) {
     const extendedExpirationTime = new Date(Date.now() + 30 * 60 * 1000); // 30 minutes (30 * 60 * 1000) = 30 minutes (default is 10 minutes)
     req.session.expires = extendedExpirationTime; // refreshes expiration time so site doesn't log out active users (https://expressjs.com/en/guide/behind-proxies.html)
   }
   next(); // next middleware (https://expressjs.com/en/guide/behind-proxies.html)
 });
 
- // middleware for checking if user is logged in or authenticated via session store (https://expressjs.com/en/guide/behind-proxies.html)
+// middleware for checking if user is logged in or authenticated via session store (https://expressjs.com/en/guide/behind-proxies.html)
 sequelize.sync({ force: false }).then(() => {   // syncs sequelize with db (default is ./config/connection.js)
   app.listen(PORT, () =>    // listens on port 3001 (default is 3001) 
-    console.log( 
+    console.log(
       `\nServer running on port ${PORT}. Visit http://localhost:${PORT} and create an account!` // logs server running on port 3001 (default is 3001) (https://expressjs.com/en/guide/behind-proxies.html
     )
   );

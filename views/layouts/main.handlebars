@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Blog | stay connected</title>
-  <link rel="stylesheet" href="/css/bulma.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body class="is-flex-direction-column">
-  <header class="is-flex is-full">
-    <nav class="navbar is-full is-flex-direction-row is-justify-content-space-around is-align-items-center" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <h1 class="is-size-3">Travel Blog</h1>
-        </a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog | stay connected</title>
+    <link rel="stylesheet" href="/css/bulma.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body class="is-flex-direction-column">
+    <header class="is-flex is-full">
+      <nav
+        class="navbar is-full is-flex-direction-row is-justify-content-space-around is-align-items-center"
+        role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <h1 class="is-size-3">Travel Blog</h1>
+          </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item is-size-5" href="/">
-            home
+          <a role="button" class="navbar-burger" aria-label="menu"
+            aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </a>
-        
-          <a class="navbar-item is-size-5" href="/dashboard">
-            dashboard
-          </a>
-        
-          {{#if loggedIn}}
-          <a class="navbar-item is-size-5">
-            <form method="post" action="/logout" class="inline">
-              <input type="hidden" name="extra_submit_param" value="extra_submit_value">
-              <button type="submit" name="logout" value="submit_value" class="link-button">
-                log out
-              </button>
-            </form>
-          </a>
-          {{else}}
-          <a class="navbar-item is-size-5" href="/login">
-            log in
-          </a>
-          {{/if}}
         </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-size-5" href="/">
+              home
+            </a>
+
+            <a class="navbar-item is-size-5" href="/dashboard">
+              dashboard
+            </a>
+
+            {{#if loggedIn}}
+            <a class="navbar-item is-size-5">
+              <form method="post" action="/logout" class="inline">
+                <input type="hidden" name="extra_submit_param"
+                  value="extra_submit_value">
+                <button type="submit" name="logout" value="submit_value"
+                  class="link-button">
+                  log out
+                </button>
+              </form>
+            </a>
+            {{else}}
+            <a class="navbar-item is-size-5" href="/login">
+              log in
+            </a>
+            {{/if}}
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="is-flex is-flex-direction-column pt-5 column is-half">
+      {{{body}}}
+      <div class="has-text-centered">
+        <img class="is-fullwidth"
+          src="/public/img/clear-water-beaches-florida-2048x917.jpg"
+          alt="travel blog image" aria-label="travel" display="block-like">
       </div>
-    </nav>
-  </header>
-  <main class="is-flex is-flex-direction-column pt-5 column is-half">
-    {{{body}}}
-    <img src="/public/img/clear-water-beaches-florida-2048x917.jpg" alt="travel blog image">
-  </main>
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
 </html>

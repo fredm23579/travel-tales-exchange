@@ -1,5 +1,5 @@
-html { 
-  background-color: #5f76db; 
+html {
+  background-color: #5f76db;
 }
 
 main {
@@ -38,12 +38,11 @@ main {
 }
 
 .link-button {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
-

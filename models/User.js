@@ -38,8 +38,8 @@ User.init(  // User model (https://sequelize.org/docs/v6/core-concepts/model-bas
     },
     sequelize, // for connecting to db with sequelize (default is ./config/connection.js) (https://sequelize.org/docs/v6/core-concepts/connections-and-transactions/)
     freezeTableName: true,   // for connecting to db with sequelize (default is ./config/connection.js) (https://sequelize.org/docs/v6/core-concepts/model-basics/)
-    underscored: true, 
-    modelName: 'user', 
+    underscored: true,
+    modelName: 'user',
   }
 );
 

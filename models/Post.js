@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize'); // import sequelize (https://sequelize.org/docs/v6/core-concepts/model-basics/)
 const sequelize = require('../config/connection'); // import connection object from connection.js (https://sequelize.org/docs/v6/core-concepts/connections-and-transactions/)
 
-class Post extends Model {} // Post model (https://sequelize.org/docs/v6/core-concepts/model-basics/)
+class Post extends Model { } // Post model (https://sequelize.org/docs/v6/core-concepts/model-basics/)
 
 Post.init(  // Post model (https://sequelize.org/docs/v6/core-concepts/model-basics/)
   {
@@ -15,7 +15,7 @@ Post.init(  // Post model (https://sequelize.org/docs/v6/core-concepts/model-bas
       type: DataTypes.STRING, // data type (https://sequelize.org/master/identifiers.html) (https://sequelize.org/docs/v6/core-concepts/model-basics/#data-types)
       allowNull: false, // allow null (https://sequelize.org/docs/v6/core-concepts/model-basics/#allowing-nulls) (https://sequelize.org/docs/v6/core-concepts/model-basics/#uniques)
     },
-      content: { // content column (https://sequelize.org/docs/v6/core-concepts/model-basics/#column-options) (https://sequelize.org/docs/v6/core-concepts/model-basics/#uniques)
+    content: { // content column (https://sequelize.org/docs/v6/core-concepts/model-basics/#column-options) (https://sequelize.org/docs/v6/core-concepts/model-basics/#uniques)
       type: DataTypes.STRING, // data type (https://sequelize.org/master/identifiers.html) (https://sequelize.org/docs/v6/core-concepts/model-basics/#data-types)
       allowNull: false, // allow null (https://sequelize.org/docs/v6/core-concepts/model-basics/#allowing-nulls) (https://sequelize.org/docs/v6/core-concepts/model-basics/#uniques)
     },

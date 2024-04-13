@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize'); // import sequelize (https://sequelize.org/docs/v6/core-concepts/model-basics/)
-const sequelize = require('../config/connection'); 
+const sequelize = require('../config/connection');
 
-class Comment extends Model {} // Comment model (https://sequelize.org/docs/v6/core-concepts/model-basics/)
+class Comment extends Model { } // Comment model (https://sequelize.org/docs/v6/core-concepts/model-basics/)
 
 Comment.init(  // Comment model (https://sequelize.org/docs/v6/core-concepts/model-basics/) 
   {
