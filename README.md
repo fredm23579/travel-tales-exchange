@@ -65,4 +65,4 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 © 2024 Travel Blog by [Fred Motta](https://github.com/fredm23579)
-Credits: Code originally developed by [Irene Panis' Ensemble Blog](https://github.com/irene-panis) and adapted to this project.
+Credits: Code originally developed by [Irene Panis' Ensemble Blog](https://github.com/irene-panis) and adapted to this project by Fred.
